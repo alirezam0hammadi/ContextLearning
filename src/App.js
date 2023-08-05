@@ -1,25 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import './App.scss'
+import './assests/index'
+// import Index from './componets/index'
+import React  from 'react';
+import Header from "./componets/Header/header";
+import Main from './componets/Main/main'
+import AppStateContextProvider from "./componets/store/store";
+import Card from "./componets/Card/card";
+
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    // console.log('1')
+    return (
+        <>
+            <AppStateContextProvider>
+                <Header/>
+                {/*<Card/>*/}
+                <Main/>
+                <Card/>
+            </AppStateContextProvider>
+
+        </>
+    );
+
 }
 
 export default App;
